@@ -40,7 +40,6 @@ while (novo == 'S'):
         nota2 = input('O valor da nota deve estar entre "0" e "10", digite novamente: ')
 
     nota3 = int(input('Informe a terceira nota: '))
-    while (nota3 < 0 or nota3 > 10):
         print('Opção Invalida')
         nota3 = input('O valor da nota deve estar entre "0" e "10", digite novamente: ')
 
@@ -77,6 +76,5 @@ print('Total de alunos do sexo Feminino de Exame: ')
 print('Total de alunos do sexo Masculino de Exame: ')
 print('Total de alunos do sexo Feminino Reprovados: ')
 print('Total de alunos do sexo Masculino Reprovados: ')
-
 
 
