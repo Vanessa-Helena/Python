@@ -6,14 +6,6 @@ while (novo != 'S' and novo != 'N'):
     print('Opção Invalida')
     novo = input('Informe "S" para Sim e "N" para Não: ').upper()
 
-totalAlunos = 0
-totalAprovados = 0
-totalExame = 0
-totalReprovados = 0
-totalAlunos_Feminino = 0
-totalAlunos_Masculino = 0
-
-
 while (novo == 'S'):
     totalAlunos += 1
     nome_aluno = input('\nInforme o nome do aluno: ')
