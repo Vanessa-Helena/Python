@@ -1,30 +1,4 @@
 titulo = '\nPROJETO FINAL DO CURSO DE INTRODUÇÃO Á PROGRAMAÇÃO PYTHON\n'
-print(titulo.rjust(20,"*"))
-
-novo = input('Deseja iniciar o cadastro das notas do aluno (S/N)? ').upper()
-while (novo != 'S' and novo != 'N'):
-    print('Opção Invalida')
-    novo = input('Informe "S" para Sim e "N" para Não: ').upper()
-
-while (novo == 'S'):
-    totalAlunos += 1
-    nome_aluno = input('\nInforme o nome do aluno: ')
-
-    sexo_aluno = input('Informe o sexo do aluno (F/M): ').upper()
-    while (sexo_aluno != 'F' and sexo_aluno != 'M'):
-        print('Opção Invalida')
-        sexo_aluno = input('Informe "F" para o sexo Feminino e "M" para o sexo Masculino: ').upper()
-
-    #alunos por sexo
-    if (sexo_aluno == 'F'):
-        totalAlunos_Feminino += 1
-    else:
-        totalAlunos_Masculino += 1
-
-    nota1 = int(input('\nInforme a primeira nota: '))
-    while (nota1 <0 or nota1 >10):
-
-titulo = '\nPROJETO FINAL DO CURSO DE INTRODUÇÃO Á PROGRAMAÇÃO PYTHON\n'
 print(titulo.center(20,'*'))
 
 novo = input('Deseja iniciar o cadastro das notas do aluno (S/N)? ').upper()
