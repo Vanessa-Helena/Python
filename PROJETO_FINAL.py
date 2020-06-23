@@ -1,4 +1,4 @@
-titulo = '\nPROJETO FINAL DO CURSO DE INTRODUÇÃO Á PROGRAMAÇÃO PYTHON\n'
+titulo = '\n****** PROJETO FINAL DO CURSO DE INTRODUÇÃO Á PROGRAMAÇÃO PYTHON ******\n'
 print(titulo.center(20,'*'))
 
 novo = input('Deseja iniciar o cadastro das notas do aluno (S/N)? ').upper()
@@ -31,59 +31,58 @@ while (novo == 'S'):
     else:
         totalAlunos_Masculino += 1
 
-    nota1 = int(input('\nInforme a primeira nota: '))
+    nota1 = float(input('\nInforme a primeira nota: '))
     while (nota1 <0 or nota1 >10):
         print('Opção Invalida')
-        nota1 = input('O valor da nota deve estar entre "0" e "10", digite novamente: ')
+        nota1 = float(input('O valor da nota deve estar entre "0" e "10", digite novamente: '))
 
-    nota2 = int(input('Informe a segunda nota: '))
+    nota2 = float(input('Informe a segunda nota: '))
     while (nota2 < 0 or nota2 > 10):
         print('Opção Invalida')
-        nota2 = input('O valor da nota deve estar entre "0" e "10", digite novamente: ')
+        nota2 = float(input('O valor da nota deve estar entre "0" e "10", digite novamente: '))
 
-    nota3 = int(input('Informe a terceira nota: '))
+    nota3 = float(input('Informe a terceira nota: '))
     while (nota3 < 0 or nota3 > 10):
         print('Opção Invalida')
-        nota3 = input('O valor da nota deve estar entre "0" e "10", digite novamente: ')
+        nota3 = float(input('O valor da nota deve estar entre "0" e "10", digite novamente: '))
 
-    media = nota1 + nota2 + nota3 / 3
+    media = float (nota1 + nota2 + nota3) / 3
+    print('%.2f' % media)
 
     #teste de notas
 
-    if (sexo_aluno == 'F'):
-            media >= 7
-            totalAprovados_F +=1
+    if sexo_aluno == 'F':
+        if media >= 7:
+            totalAprovados_F += 1
     else:
-            media >= 7
-            totalAprovados_M +=1
-
-    if(sexo_aluno == 'F'):
-            media >= 4 and 7
-            totalExame_F +=1
+        if media >= 7:
+            totalAprovados_M += 1
+    if sexo_aluno == 'F':
+        if 4 <= media < 7:
+            totalExame_F += 1
     else:
-            media >= 4 and 7
-            totalExame_M +=1
-
-    if(sexo_aluno == 'F'):
-            media <4
-            totalReprovados_F +=1
+        if 4 <= media < 7:
+            totalExame_M += 1
+    if sexo_aluno == 'F':
+        if media < 4:
+            totalReprovados_F += 1
     else:
-            media < 4
-            totalReprovados_M +=1
+        if media < 4:
+            totalReprovados_M += 1
 
     novo = input('\nDeseja continuar o cadastro das notas do aluno (S/N)? ').upper()
     while (novo != 'S' and novo != 'N'):
         print('Opção Invalida')
         novo = input('Informe "S" para Sim e "N" para Não: ').upper()
 else:
-    resultados = '\n\nApesentar os resultados finais\n\n'
+    resultados = '\n\n****** Apesentar os resultados finais ******\n\n'
     print(resultados.center(20,"*"))
 
 print('Total de Alunos Cadastrados', totalAlunos)
 
-print('Percentual de alunos Aprovados: ', (totalAprovados_F + totalAprovados_M*100)/totalAlunos, '%')
-print('Percentual de alunos de Exame: ', (totalExame_F + totalExame_M*100)/totalAlunos, '%')
-print('Percentual de alunos Reprovados: ', (totalReprovados_F + totalReprovados_M*100)/totalAlunos, '%')
+print('Percentual de alunos Aprovados: ', (totalAprovados_F + totalAprovados_M)*100/totalAlunos, '%')
+print('Percentual de alunos de Exame: ', (totalExame_F + totalExame_M)*100/totalAlunos, '%')
+print('Percentual de alunos Reprovados: ', (totalReprovados_F + totalReprovados_M)*100/totalAlunos, '%')
 
 print('Total de alunos do sexo Feminino: ', totalAlunos_Feminino)
 print('Total de alunos do sexo Masculino: ', totalAlunos_Masculino)
