@@ -1,7 +1,8 @@
-titulo = '\n****** PROJETO FINAL DO CURSO DE INTRODUÇÃO Á PROGRAMAÇÃO PYTHON ******\n'
-print(titulo.center(20,'*'))
 
-novo = input('Deseja iniciar o cadastro das notas do aluno (S/N)? ').upper()
+titulo = '\nPROJETO FINAL DO CURSO DE INTRODUÇÃO Á PROGRAMAÇÃO PYTHON\n'
+print(titulo.center(173,'*'))
+
+novo = input('\nDeseja iniciar o cadastro das notas do aluno (S/N)? ').upper()
 while (novo != 'S' and novo != 'N'):
     print('Opção Invalida')
     novo = input('Informe "S" para Sim e "N" para Não: ').upper()
@@ -47,7 +48,14 @@ while (novo == 'S'):
         nota3 = float(input('O valor da nota deve estar entre "0" e "10", digite novamente: '))
 
     media = float (nota1 + nota2 + nota3) / 3
-    print('%.2f' % media)
+    print('\nA média de %s é %.2f' % (nome_aluno, media))
+    if media >= 7:
+        print('Aluno Aprovado')
+    if 4 <= media < 7:
+                print('Aluno de Exame')
+    else:
+        if media < 4:
+            print('Aluno Reprovado')
 
     #teste de notas
 
@@ -75,16 +83,16 @@ while (novo == 'S'):
         print('Opção Invalida')
         novo = input('Informe "S" para Sim e "N" para Não: ').upper()
 else:
-    resultados = '\n\n****** Apesentar os resultados finais ******\n\n'
-    print(resultados.center(20,"*"))
+    resultados = '\nApesentar os resultados finais\n'
+    print(resultados.center(92,"*"))
 
-print('Total de Alunos Cadastrados', totalAlunos)
+print('\nTotal de Alunos Cadastrados', totalAlunos)
 
-print('Percentual de alunos Aprovados: ', (totalAprovados_F + totalAprovados_M)*100/totalAlunos, '%')
+print('\nPercentual de alunos Aprovados: ', (totalAprovados_F + totalAprovados_M)*100/totalAlunos, '%')
 print('Percentual de alunos de Exame: ', (totalExame_F + totalExame_M)*100/totalAlunos, '%')
 print('Percentual de alunos Reprovados: ', (totalReprovados_F + totalReprovados_M)*100/totalAlunos, '%')
 
-print('Total de alunos do sexo Feminino: ', totalAlunos_Feminino)
+print('\nTotal de alunos do sexo Feminino: ', totalAlunos_Feminino)
 print('Total de alunos do sexo Masculino: ', totalAlunos_Masculino)
 print('Total de alunos do sexo Feminino Aprovados: ', totalAprovados_F )
 print('Total de alunos do sexo Masculino Aprovados: ', totalAprovados_M)
